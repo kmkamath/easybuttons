@@ -7,7 +7,7 @@ Our target ecosystem is comprised of Raspberry Pi hardware, lightweigh OpenWRT D
 
 ### easybutton-openwrt-build
 ```sh	
-$easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/dl [opwenwrt_version]
+$easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/feeds.conf.default /full/path/to/your/dl [opwenwrt_version]
 ```
 `/full/path/to/your/openwrt/files` The first input argument asks you to provide your custom file directory location as an absolute path.
 
@@ -17,7 +17,11 @@ $easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/co
 
 *OpenWRT has a very flexible package build and management system, almost too flexible. Its best to chose the packages you need before-hand as a default config (See [here](https://wiki.openwrt.org/doc/howto/build#configure_using_config_diff_file) for more details).*
 
-`/full/path/to/your/dl` The third input argument asks you to provide your custom dl directories with downloaded source tarballs from successful build. If this is your first build and don't have any downloaded sources, you still need to provide a link to an empty directory.
+`/full/path/to/your/feeds.conf.default` The third input argument asks you to provide your custom feeds.conf.default file location as an absolute path.
+
+*OpenWRT package repositories aren't updated frequently, inspite of a package management system that enables frequent update! I fork the package feeds as necessary, make my changes and point the feeds.conf.default to this forked git repository*
+
+`/full/path/to/your/dl` The fourth input argument asks you to provide your custom dl directories with downloaded source tarballs from successful build. If this is your first build and don't have any downloaded sources, you still need to provide a link to an empty directory.
 
 *Even before these new packagae management systems like npm were devised, OpenWRT followed a similar principal i.e. it doesn't contain any executables or even sources. It's an automated system for downloading the sources, patching them to work with the given platform and compiling them correctly for the platform. Well, thats really neat, and basically what allowed OpenWRT to be one of the most universally supported distributions on multiple consumer grade AP and Router devices. However, atleast one site or mirror hosting the upstream repsository is almost always down resulting in download failures and subsequently build failures. Hence, once you have a successful build I suggest you copy the 'dl' directory so repeated builds dont fail*
 

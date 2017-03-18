@@ -1,0 +1,36 @@
+diff -Naur moloch-0.17.1/configure moloch-0.17.1-patched/configure
+--- moloch-0.17.1/configure	2017-01-31 10:50:43.000000000 -0500
++++ moloch-0.17.1-patched/configure	2017-03-18 03:45:26.782659051 -0400
+@@ -5037,8 +5037,8 @@
+ esac
+ else
+ 
+-  if test -f ${prefix}/include/libyara/yara.h; then
+-     YARA_CFLAGS="-I${prefix}/include/libyara"
++  if test -f ${prefix}/include/yara.h; then
++     YARA_CFLAGS="-I${prefix}/include"
+      YARA_LIBS="-L${exec_prefix}/lib -lyara"
+   elif test -f /usr/include/libyara/yara.h; then
+      YARA_CFLAGS=""
+@@ -5185,8 +5185,8 @@
+ esac
+ else
+ 
+-  GLIB2_CFLAGS=`pkg-config gio-2.0 gobject-2.0 gthread-2.0 glib-2.0 gmodule-2.0 --cflags`
+-  GLIB2_LIBS=`pkg-config gio-2.0 gobject-2.0 gthread-2.0 glib-2.0 gmodule-2.0 --libs`
++  GLIB2_CFLAGS="-I${prefix}/include/glib-2.0/ -I${prefix}/include/glib-2.0/glib -I${prefix} -I${prefix}/include/glib-2.0/gobject -I${prefix}/include/glib-2.0/gio"
++  GLIB2_LIBS="-L${exec_prefix}/lib -lglib-2.0 -lgmodule-2.0 -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -lattr -lpolarssl"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ fi
+@@ -5273,8 +5273,8 @@
+ esac
+ else
+ 
+-  CURL_CFLAGS=`pkg-config libcurl --cflags`
+-  CURL_LIBS=`pkg-config libcurl --libs`
++  CURL_CFLAGS="-I${prefix}/include"
++  CURL_LIBS="-L${exec_prefix}/lib -lcurl"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ fi
