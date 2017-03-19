@@ -42,9 +42,9 @@ cd node-v$NODE/
 
 #Configure
 if [[ $NODE =~ [0-4] ]]; then
-	./configure --without-snapshot --dest-cpu=arm --dest-os=linux --without-ssl
+	./configure --without-snapshot --dest-cpu=arm --dest-os=linux
 else
-	./configure --without-snapshot --dest-cpu=arm --dest-os=linux --without-ssl --without-intl --without-inspector
+	./configure --without-snapshot --dest-cpu=arm --dest-os=linux --without-intl --without-inspector
 fi
 sed -i "s@'cflags': \[\]@'cflags': \['-D__STDC_LIMIT_MACROS' ,'-D__STDC_CONSTANT_MACROS'\],'ldflags': \[ '-Wl,-rpath,$TOOLCHAINDIR_LIB'\]@g" config.gypi
 find . -type f -exec sed -i 's/nearbyintf/roundf/g' {} \;
@@ -57,4 +57,3 @@ make -j9
 make install
 
 exit 0
-
