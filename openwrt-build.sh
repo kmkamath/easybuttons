@@ -11,7 +11,7 @@ if [ -n "$4" ]; then
 	export DLDIR=$4
 	export OPENWRT=$5
 else
-	echo "Usage: easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/feeds.conf.default /full/path/to/your/dl [opwenwrt_version]"
+	echo "Usage: openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/feeds.conf.default /full/path/to/your/dl [opwenwrt_version]"
 	echo "Please provide the FULL path for following two directories as input arguments, in same order: "
 	echo "	1) Files Directory (ex: ~/openwrt-defconfig/files/)"
 	echo "	2) Config File (ex: ~/openwrt-defconfig/config.diff)"
