@@ -3,11 +3,13 @@ easybuttons
 
 Our target ecosystem is comprised of Raspberry Pi hardware, lightweigh OpenWRT Distribution and popular NodeJS server side language. These easybutton scripts help us setup our target ecosystem quickly.
 
+Considering non-existent updates to OpenWrt, lately I have also been looking into moving to Yocto or Raspbian Lite (Debian)
+
 ## Usage
 
-### easybutton-openwrt-build
+### openwrt-build
 ```sh	
-$easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/feeds.conf.default /full/path/to/your/dl [opwenwrt_version]
+$openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/config.diff /full/path/to/your/feeds.conf.default /full/path/to/your/dl [opwenwrt_version]
 ```
 `/full/path/to/your/openwrt/files` The first input argument asks you to provide your custom file directory location as an absolute path.
 
@@ -30,15 +32,15 @@ $easybutton-openwrt-build /full/path/to/your/openwrt/files /full/path/to/your/co
 *As of writing this (15 Mar 2017) Raspberry Pi3 was not supported in any official OpenWRT release, and only supported in master branch.*
 
 
-### easybutton-openwrt-copy
+### openwrt-install
 ```sh	
-$easybutton-openwrt-copy path/to/image /full/path/to/device
+$openwrt-install path/to/image /full/path/to/device
 ```
 This script really doesn't do much, and purely for my own convenice. It simply does a 'dd' copy of the image provided as first input argument to device provided as second input argument. Please be very careful of executing this command as it has the potential of runing you host PC if you aren't careful with respect to providing second input argument.
 
-### easybutton-openwrt-nodejs
+### openwrt-nodejs
 ```sh	
-$easybutton-openwrt-install /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/files [nodejs_version]
+$openwrt-install /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/files [nodejs_version]
 ```
 
 The NodeJS that comes packages with OpenWRT is 0.12.x version. In order to use the later 4.x or 6.x version of NodeJS on OpenWRT you need to build it from the source. This easybutton script simplifies this. Btw, the scripts borrows liberally from [this](http://techfindings.one/archives/2498) online blog.
