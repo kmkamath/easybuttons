@@ -12,7 +12,7 @@ if [ -n "$3" ]; then
 	export PREFIX=/usr
 	export TDIR=/root/moloch
 else
-	echo "Usage: easybutton-openwrt-moloch /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/target /full/path/to/your/openwrt/install"
+	echo "Usage: openwrt-moloch /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/target /full/path/to/your/openwrt/install"
 	echo "Please provide the FULL path for following three directories as input arguments, in same order: "
 	echo "	1) Toolchain Directory for Compile (ex: ~/openwrt/staging/toolchain_...), and" 
 	echo "	2) Target Directory for Compile Dependencies (ex: ~/openwrt/staging/target_...), and" 

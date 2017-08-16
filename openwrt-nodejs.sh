@@ -11,7 +11,7 @@ if [ -n "$2" ]; then
 	fi
 	export PREFIX=/usr/local
 else
-	echo "Usage: easybutton-openwrt-nodejs /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/files [node_version]"
+	echo "Usage: openwrt-nodejs /full/path/to/your/openwrt/toolchain /full/path/to/your/openwrt/files [node_version]"
 	echo "Please provide the FULL path as input arguments, in same order: "
 	echo "	1) Toolchain Directory for Compile (ex: ~/openwrt/staging/toolchain_...), and" 
 	echo "	2) Destination Directory for Install (ex: ~/openwrt/files/)"

@@ -2,7 +2,7 @@
 
 #Usage and Input Arguments
 if [ -z "$2" ]; then
-	echo "Usage: easybutton-openwrt-copy path/to/image /full/path/to/device"
+	echo "Usage: openwrt-install path/to/image /full/path/to/device"
 	echo "Please provide the path for following two, in same order: "
 	echo "	1) Image File (ex: if=bin/brcm2708/openwrt-brcm2708-bcm2710-rpi-3-ext4-sdcard.img)" 
 	echo "	2) Files Directory (ex: /dev/mmcblk0)"
